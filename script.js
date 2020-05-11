@@ -19,10 +19,14 @@ let filterStrength = 40;
 console.log("length",nesGames.length)
 let randomGameNumber = ""
 let randomGame = [] 
+let potentialWinnablePoints = 100;
+let wrongGuessesCount = 0;
 
 function generateNewGame(){
     //Gets a random number in the data array
     filterStrength = 40;
+    //RESET WRONG GUESSES COUNT TO 0
+    wrongGuessesCount = 0;
     document.getElementById('boxArt').style.filter = `blur(40px)`
 
     randomGameNumber = Math.floor(Math.random() * nesGames.length)
@@ -40,19 +44,18 @@ function generateNewGame(){
     //Gets the image from the random number array selected
     document.getElementById('boxArt').src=randomGame.Image;
 
-
-
+    //Gets the right Game Title 
     rightAnswer = randomGame.Title;
     console.log("right Answer", rightAnswer)
 
+    //Places the right answer in a random button from the 4 answer buttons
     let random1to4 = Math.floor(Math.random() * 4 + 1)
     console.log(random1to4)
     //Right answer button
     document.getElementById('answer'+random1to4).innerHTML=rightAnswer;
     
-    //Wrong Answers to remaining buttons
+    //Calls to make Wrong Answers and assign to remaining buttons
     wrongAnswersGenerator(rightAnswer,random1to4)
-
 }
 
 //generateNewGame()
@@ -60,7 +63,6 @@ function generateNewGame(){
 function wrongAnswersGenerator(rightAnswer,random1to4){
     let count = 0;
     let buttonArray = [1,2,3,4]
-    let randomWrongGameName;
 
     //REMOVE The number of button that has the right answer
     const index = buttonArray.indexOf(random1to4);
@@ -69,7 +71,7 @@ function wrongAnswersGenerator(rightAnswer,random1to4){
     }
     console.log("buttonArrayFiltered", buttonArray)
 
-    //GRABS Random game names that are NOT the right answer
+    //GRABS Random game names that are NOT the right answer and assigns to the remaining 3 buttons
     for(let i = 0; count < 3; i++){
         randomWrongGameName = Math.floor(Math.random() * nesGames.length)
         if(nesGames[i].Title !== rightAnswer){
@@ -86,12 +88,14 @@ function guessGame(x){
     console.log(document.getElementById("answer"+x).innerHTML)
     console.log("userScore before is ", userScore)
     
+    //Sequence for guessing a new game.
+    //If the user guesses the right answer
     if (document.getElementById("answer"+x).innerHTML === rightAnswer) {
-        //if answer is right: increase score, deactivate answer buttons, display next button
-        userScore += 100;
+        //IF ANSWER IS RIGHT
+        //Increase Score
+        userScore += potentialWinnablePoints;
         document.getElementById('Score').innerHTML = userScore
-        //console.log("userScore after is ", userScore)
-        //gameRound++;
+        //Increase Round
         document.getElementById('Round').innerHTML = gameRound;
         document.getElementById('boxArt').style.filter = `blur(${0}px)`
         // DISABLE ANSWER BUTTONS UPON CORRECT ANSWER AND ENABLE NEXT BUTTON
@@ -100,12 +104,37 @@ function guessGame(x){
         document.getElementById("answer2").disabled = true;
         document.getElementById("answer3").disabled = true;
         document.getElementById("answer4").disabled = true;
-   
+        potentialWinnablePoints = 100;
 
     } else {
-        //decrease intensity of filter by 10
+        //DECREASE INTENSITY OF FILTER BY 10
         filterStrength -= 10;
         document.getElementById('boxArt').style.filter = `blur(${filterStrength}px)`
+        document.getElementById("answer"+x).disabled = true;
+        //
+        if(potentialWinnablePoints === 25){
+            potentialWinnablePoints = 0;
+        }
+        if(potentialWinnablePoints === 50){
+            potentialWinnablePoints = 25;
+        }
+        if(potentialWinnablePoints === 100){
+            potentialWinnablePoints = 50;
+        }
+
+        wrongGuessesCount++
+        console.log("WrongGuessesCount ",wrongGuessesCount)
+        //IF GUESSES 3 ANSWERS WRONG
+        if(wrongGuessesCount === 3){
+            document.getElementById('boxArt').style.filter = `blur(0px)`;
+            document.getElementById("answer1").disabled = true;
+            document.getElementById("answer2").disabled = true;
+            document.getElementById("answer3").disabled = true;
+            document.getElementById("answer4").disabled = true;
+            document.getElementById("nextGame").disabled = false;
+            wrongGuessesCount = 0;
+        }
+        
     }
 
 }
