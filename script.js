@@ -23,18 +23,26 @@ let potentialWinnablePoints = 100;
 let wrongGuessesCount = 0;
 
 function generateNewGame(){
-    //Gets a random number in the data array
+    //
+    // delete document.getElementById('welcomeImage')
+    // document.getElementById('boxArt').style.visibility = true;
+    //SETS A BLUR OF 40 BY DEFAULT TO IMAGE
     filterStrength = 40;
-    //RESET WRONG GUESSES COUNT TO 0
-    wrongGuessesCount = 0;
     document.getElementById('boxArt').style.filter = `blur(40px)`
 
+    //SETS GAME ROUND TO 1
+    gameRound++
+    document.getElementById('Round').innerHTML = gameRound;
+
+    //RESET WRONG GUESSES COUNT TO 0
+    wrongGuessesCount = 0;
+    
+    //GENERATE A RANDOM NUMBER IN THE DATA ARRAY
     randomGameNumber = Math.floor(Math.random() * nesGames.length)
     console.log(randomGameNumber)
     randomGame = nesGames[randomGameNumber]
     console.log(randomGame)
-
-
+    //ACTIVATE ANSWER BUTTONS AND DEACTIVATE NEXT BUTTON
     document.getElementById("answer1").disabled = false;
     document.getElementById("answer2").disabled = false;
     document.getElementById("answer3").disabled = false;
@@ -54,7 +62,7 @@ function generateNewGame(){
     //Right answer button
     document.getElementById('answer'+random1to4).innerHTML=rightAnswer;
     
-    //Calls to make Wrong Answers and assign to remaining buttons
+    //Calls to make Wrong Answers and assign them to remaining buttons
     wrongAnswersGenerator(rightAnswer,random1to4)
 }
 
