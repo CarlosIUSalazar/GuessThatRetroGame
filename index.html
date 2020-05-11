@@ -23,6 +23,7 @@
             <div class="ScoreBoard">
                 <h2>Round <span id="Round"></span>/10</h2>
                 <h3>Your Score: <span id="Score"></span></h3>
+                <h4>Winnable Points This Round: <span id="WinnablePoints"></span></h4>
             </div>
 
             <div class="PhotoContainer" id="gamePicture">
@@ -30,10 +31,10 @@
             </div>
             
             <div class="ButtonsContainer">
-                <button id="answer1" type="button" onclick="guessGame(1)">Click Me!</button>
-                <button id="answer2" type="button" onclick="guessGame(2)">Click Me!</button>
-                <button id="answer3" type="button" onclick="guessGame(3)">Click Me!</button>
-                <button id="answer4" type="button" onclick="guessGame(4)">Click Me!</button>
+                <button id="answer1" type="button" onclick="guessGame(1)" style="visibility: hidden;">Click Me!</button>
+                <button id="answer2" type="button" onclick="guessGame(2)" style="visibility: hidden;">Click Me!</button>
+                <button id="answer3" type="button" onclick="guessGame(3)" style="visibility: hidden;">Click Me!</button>
+                <button id="answer4" type="button" onclick="guessGame(4)" style="visibility: hidden;">Click Me!</button>
             </div>
             <div class="NextButton">
                 <button id="nextGame" type="button" onclick="generateNewGame()">Next Image -></button>

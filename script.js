@@ -1,3 +1,5 @@
+
+
 let userScore = 0;
 let gameRound = 0;
 let gameTitle = "";
@@ -23,9 +25,13 @@ let potentialWinnablePoints = 100;
 let wrongGuessesCount = 0;
 
 function generateNewGame(){
-    //
-    // delete document.getElementById('welcomeImage')
-    // document.getElementById('boxArt').style.visibility = true;
+
+    //IF 10 ROUNDS END THE GAME
+    if (gameRound === 10){
+        alert("Game Finished!!")
+        gameFinished()
+    }
+
     //SETS A BLUR OF 40 BY DEFAULT TO IMAGE
     filterStrength = 40;
     document.getElementById('boxArt').style.filter = `blur(40px)`
@@ -33,6 +39,12 @@ function generateNewGame(){
     //SETS GAME ROUND TO 1
     gameRound++
     document.getElementById('Round').innerHTML = gameRound;
+
+    //RESET WINNABLE POINTS TO 100
+    wrongGuessesCount = 100;
+
+    //DISPLAYS THIS ROUND WINNABLE POINTS
+    document.getElementById('WinnablePoints').innerHTML = potentialWinnablePoints;
 
     //RESET WRONG GUESSES COUNT TO 0
     wrongGuessesCount = 0;
@@ -43,6 +55,11 @@ function generateNewGame(){
     randomGame = nesGames[randomGameNumber]
     console.log(randomGame)
     //ACTIVATE ANSWER BUTTONS AND DEACTIVATE NEXT BUTTON
+    document.getElementById("answer1").style.visibility = "visible";
+    document.getElementById("answer2").style.visibility = "visible";
+    document.getElementById("answer3").style.visibility = "visible";
+    document.getElementById("answer4").style.visibility = "visible";
+
     document.getElementById("answer1").disabled = false;
     document.getElementById("answer2").disabled = false;
     document.getElementById("answer3").disabled = false;
@@ -63,7 +80,7 @@ function generateNewGame(){
     document.getElementById('answer'+random1to4).innerHTML=rightAnswer;
     
     //Calls to make Wrong Answers and assign them to remaining buttons
-    wrongAnswersGenerator(rightAnswer,random1to4)
+    wrongAnswersGenerator(rightAnswer,random1to4,gameRound)
 }
 
 //generateNewGame()
@@ -129,7 +146,10 @@ function guessGame(x){
         if(potentialWinnablePoints === 100){
             potentialWinnablePoints = 50;
         }
+        //UPDATES THIS ROUND WINNABLE POINTS
+        document.getElementById('WinnablePoints').innerHTML = potentialWinnablePoints;
 
+        //INCREASES THE WRONG GUESS COUNT
         wrongGuessesCount++
         console.log("WrongGuessesCount ",wrongGuessesCount)
         //IF GUESSES 3 ANSWERS WRONG
@@ -145,4 +165,12 @@ function guessGame(x){
         
     }
 
+
 }
+
+function gameFinished(){
+    alert("Your Final Score is "+userScore+". Play again?")
+    location.reload()
+}
+
+
