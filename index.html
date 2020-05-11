@@ -15,6 +15,14 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+         <!-- Inserts Bubble Background -->
+		<script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
+        <script>bubbly({
+          colorStart: '#FFF456',
+          colorStop: '#00ffff',
+          bubbleFunc:() => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`
+        });</script>
+
         
             <div class="Title">
                 <h1>GUESS THAT GAME!</h1>
@@ -31,19 +39,25 @@
             </div>
             
             <div class="ButtonsContainer">
-                <button id="answer1" type="button" onclick="guessGame(1)" style="visibility: hidden;">Click Me!</button>
-                <button id="answer2" type="button" onclick="guessGame(2)" style="visibility: hidden;">Click Me!</button>
-                <button id="answer3" type="button" onclick="guessGame(3)" style="visibility: hidden;">Click Me!</button>
-                <button id="answer4" type="button" onclick="guessGame(4)" style="visibility: hidden;">Click Me!</button>
+                <button class="AnswerButton1" id="answer1" type="button" onclick="guessGame(1)" style="visibility: hidden;">Click Me!</button>
+                <button class="AnswerButton2" id="answer2" type="button" onclick="guessGame(2)" style="visibility: hidden;">Click Me!</button>
+                <button class="AnswerButton3" id="answer3" type="button" onclick="guessGame(3)" style="visibility: hidden;">Click Me!</button>
+                <button class="AnswerButton4" id="answer4" type="button" onclick="guessGame(4)" style="visibility: hidden;">Click Me!</button>
             </div>
             <div class="NextButton">
-                <button id="nextGame" type="button" onclick="generateNewGame()">Next Image -></button>
+                <button id="nextGame" type="button" onclick="generateNewGame()">Next Image</button>
             </div>
             
-            <div class="Footer">
+            <!-- <div class="Footer">
                 <p>Made With 🥚🍳 By Carlos</p>
-            </div>
+            </div> -->
 
+            <p class="creator">
+                <div class="footer">
+                    Made with <i class="fa fa-heart"></i> by <a href="https://github.com/CarlosIUSalazar"
+                        target="_blank">Carlos</a>
+                </div>
+            </p>
 
             <!-- document.getElementById('bigpic').style.display='block'; -->
 

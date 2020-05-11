@@ -1,3 +1,223 @@
-/* #boxArt { 
-    filter: blur(10px);
-} */
+body {
+	max-width: 500px;
+	margin: auto;
+}
+
+.Title {
+	margin: auto;
+	background-color: aquamarine;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+.ScoreBoard {
+	text-align: center;
+}
+
+#Round {
+}
+
+#Score {
+}
+
+#WinnablePoints {
+}
+
+.PhotoContainer {
+	/* display: flex;
+	align-items: flex-start;
+	box-shadow: 0px 8px 40px 20px #0ff;
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	margin-left: -25px;
+	margin-right: -25%; */
+}
+
+#boxArt {
+}
+
+.ButtonsContainer {
+	text-align: center;
+	display: flex;
+}
+
+.NextButton {
+	display: flex;
+}
+#nextGame {
+	margin: auto;
+	box-shadow: inset 0px 1px 0px 0px #fbafe3;
+	background: linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+	background-color: #ff5bb0;
+	border-radius: 6px;
+	border: 1px solid #ee1eb5;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #c70067;
+}
+#nextGame:hover {
+	background: linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+	background-color: #ef027d;
+}
+#nextGame:active {
+	position: relative;
+	top: 1px;
+}
+
+.AnswerButton1 {
+	text-align: center;
+	box-shadow: inset 0px 1px 0px 0px #e184f3;
+	background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background-color: #c123de;
+	border-radius: 6px;
+	border: 1px solid #a511c0;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #9b14b3;
+}
+.AnswerButton1:hover {
+	background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+	background-color: #a20dbd;
+}
+.AnswerButton1:active {
+	position: relative;
+	top: 1px;
+}
+
+.AnswerButton2 {
+	text-align: center;
+	box-shadow: inset 0px 1px 0px 0px #a4e271;
+	background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	background-color: #89c403;
+	border-radius: 6px;
+	border: 1px solid #74b807;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #528009;
+}
+.AnswerButton2:hover {
+	background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	background-color: #77a809;
+}
+.AnswerButton2:active {
+	position: relative;
+	top: 1px;
+}
+
+.AnswerButton3 {
+	text-align: center;
+	box-shadow: inset 0px 1px 0px 0px #97c4fe;
+	background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color: #3d94f6;
+	border-radius: 6px;
+	border: 1px solid #337fed;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #1570cd;
+}
+.AnswerButton3:hover {
+	background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color: #1e62d0;
+}
+.AnswerButton3:active {
+	position: relative;
+	top: 1px;
+}
+
+.AnswerButton4 {
+	text-align: center;
+	box-shadow: inset 0px 1px 0px 0px #f5978e;
+	background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	background-color: #f24537;
+	border-radius: 6px;
+	border: 1px solid #d02718;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #810e05;
+}
+.AnswerButton4:hover {
+	background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	background-color: #c62d1f;
+}
+.myAnswerButton4Button:active {
+	position: relative;
+	top: 1px;
+}
+
+.creator {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: white;
+	font-size: 1em;
+	padding-top: 940px;
+}
+
+.creator a {
+	color: white;
+	text-decoration: underline;
+}
+
+.creator a:hover {
+	color: rgb(238, 92, 92);
+}
+
+.fa-heart {
+	color: #ff0000;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(146, 90, 90);
+	color: white;
+	text-align: center;
+}
