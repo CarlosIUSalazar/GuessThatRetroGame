@@ -15,17 +15,33 @@ let button1 = document.getElementById("answer1");
 let button2 = document.getElementById("answer2");
 let button3 = document.getElementById("answer3");
 let button4 = document.getElementById("answer4");
-
+let filterStrength = 40;
 console.log("length",nesGames.length)
-
-let randomGameNumber = Math.floor(Math.random() * nesGames.length)
-console.log(randomGameNumber)
-
-let randomGame = nesGames[randomGameNumber]
-console.log(randomGame)
+let randomGameNumber = ""
+let randomGame = [] 
 
 function generateNewGame(){
+    //Gets a random number in the data array
+    filterStrength = 40;
+    document.getElementById('boxArt').style.filter = `blur(40px)`
+
+    randomGameNumber = Math.floor(Math.random() * nesGames.length)
+    console.log(randomGameNumber)
+    randomGame = nesGames[randomGameNumber]
+    console.log(randomGame)
+
+
+    document.getElementById("answer1").disabled = false;
+    document.getElementById("answer2").disabled = false;
+    document.getElementById("answer3").disabled = false;
+    document.getElementById("answer4").disabled = false;
+    document.getElementById("nextGame").disabled = true;
+
+    //Gets the image from the random number array selected
     document.getElementById('boxArt').src=randomGame.Image;
+
+
+
     rightAnswer = randomGame.Title;
     console.log("right Answer", rightAnswer)
 
@@ -39,7 +55,7 @@ function generateNewGame(){
 
 }
 
-generateNewGame()
+//generateNewGame()
 
 function wrongAnswersGenerator(rightAnswer,random1to4){
     let count = 0;
@@ -53,7 +69,7 @@ function wrongAnswersGenerator(rightAnswer,random1to4){
     }
     console.log("buttonArrayFiltered", buttonArray)
 
-    //GRABS Random game names that are NOT the right name
+    //GRABS Random game names that are NOT the right answer
     for(let i = 0; count < 3; i++){
         randomWrongGameName = Math.floor(Math.random() * nesGames.length)
         if(nesGames[i].Title !== rightAnswer){
@@ -65,5 +81,31 @@ function wrongAnswersGenerator(rightAnswer,random1to4){
 }
 
 function guessGame(x){
+    console.log("From guessGame function with value of ", x)
+    console.log(rightAnswer)
+    console.log(document.getElementById("answer"+x).innerHTML)
+    console.log("userScore before is ", userScore)
     
+    if (document.getElementById("answer"+x).innerHTML === rightAnswer) {
+        //if answer is right: increase score, deactivate answer buttons, display next button
+        userScore += 100;
+        document.getElementById('Score').innerHTML = userScore
+        //console.log("userScore after is ", userScore)
+        //gameRound++;
+        document.getElementById('Round').innerHTML = gameRound;
+        document.getElementById('boxArt').style.filter = `blur(${0}px)`
+        // DISABLE ANSWER BUTTONS UPON CORRECT ANSWER AND ENABLE NEXT BUTTON
+        document.getElementById("nextGame").disabled = false;
+        document.getElementById("answer1").disabled = true;
+        document.getElementById("answer2").disabled = true;
+        document.getElementById("answer3").disabled = true;
+        document.getElementById("answer4").disabled = true;
+   
+
+    } else {
+        //decrease intensity of filter by 10
+        filterStrength -= 10;
+        document.getElementById('boxArt').style.filter = `blur(${filterStrength}px)`
+    }
+
 }
