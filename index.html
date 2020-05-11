@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Guess That Image</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+            <div class="Title">
+                <h1>GUESS THAT GAME!</h1>
+            </div>
+
+            <div class="ScoreBoard">
+                <h3>Your Score: <span id="Score"></span></h3>
+                <h2>Round <span id="Round"></span>/10</h2>
+            </div>
+
+            <div class="PhotoContainer" id="gamePicture" style="">
+                <img id="boxArt" src="./Img/Background.jpg">
+            </div>
+            
+            <div class="ButtonsContainer">
+                <button id="answer1" type="button" onclick="guessGame(1)">Click Me!</button>
+                <button id="answer2" type="button" onclick="guessGame(2)">Click Me!</button>
+                <button id="answer3" type="button" onclick="guessGame(3)">Click Me!</button>
+                <button id="answer4" type="button" onclick="guessGame(4)">Click Me!</button>
+            </div>
+            <div class="NextButton">
+                <button id="nextGame" type="button">Next Image -></button>
+            </div>
+            
+            <div class="Footer">
+                <p>Made With Tamagochis By Carlos</p>
+            </div>
+
+
+            <!-- document.getElementById('bigpic').style.display='block'; -->
+
+        <script src="./Data/data.js" async defer></script>
+        <script src="./script.js" async defer></script>
+    </body>
+</html>
