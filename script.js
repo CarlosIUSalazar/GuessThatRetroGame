@@ -1,5 +1,13 @@
 //Insert .env here
-
+var firebaseConfig = {
+    apiKey: "AIzaSyDIkbRWGDcqaF0UA5KM0P1LFjZsnR5mX_c",
+    authDomain: "guessthatgame-9454c.firebaseapp.com",
+    databaseURL: "https://guessthatgame-9454c.firebaseio.com",
+    projectId: "guessthatgame-9454c",
+    storageBucket: "guessthatgame-9454c.appspot.com",
+    messagingSenderId: "1035180389643",
+    appId: "1:1035180389643:web:21d8c95e71d410cfcc1e0e"
+  };
 
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();

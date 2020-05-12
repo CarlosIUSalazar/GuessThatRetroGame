@@ -17,24 +17,43 @@
      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
     </head>
     <body>
+ <!-- Inserts Bubble Background -->
+ <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
+      <script>
+        bubbly({
+            //ORIGINAL
+            colorStart: '#10FFFF',
+            colorStop: '#FF00FF',
+            bubbleFunc: () => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`
+        });
+
+        // colorStart: '#FFF456',
+        // colorStop: '#FF00FF',
+     </script>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <p class="leaderBoardTitle">GUESS THAT GAME! LEADERBOARD</p>
-
+        <p><a class="backHomeLink" href="./index.html">Back to Game</a></p>
         <table class="table my-3">
             <thead>
-              <tr>
+              <tr class="tableRow">
                 <!-- <th scope="col">Id</th> -->
-                <th scope="col">User Name</th>
-                <th scope="col">Score</th>
-                <th scope="col">Date</th>
+                <th class="tableHead1" scope="col">User Name</th>
+                <th class="tableHead2" scope="col">Score</th>
+                <th class="tableHead3" scope="col">Date</th>
               </tr>
             </thead>
             <tbody id="tabla">
             </tbody>
           </table>
 
+
+          <p class="creator">
+            <div class="footer">
+                <span> <a class="leaderboardLink" href="./index.html">Home</a>   |   Made with 🥔 by <a class="creator" href="https://github.com/CarlosIUSalazar" target="_blank">Carlos</a></span>
+            </div>
+            </p>
 
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
