@@ -1050,7 +1050,6 @@ let nesGames = [
         Platform: "NES"
     }
 ]
-
 let userScore = 0;
 let gameRound = 0;
 let gameTitle = "";
@@ -1110,6 +1109,7 @@ function generateNewGame(){
     document.getElementById("answer2").style.visibility = "visible";
     document.getElementById("answer3").style.visibility = "visible";
     document.getElementById("answer4").style.visibility = "visible";
+    document.getElementById("nextGame").style.visibility = "hidden";
 
     document.getElementById("answer1").disabled = false;
     document.getElementById("answer2").disabled = false;
@@ -1174,12 +1174,14 @@ function guessGame(x){
         //Increase Round
         document.getElementById('Round').innerHTML = gameRound;
         document.getElementById('boxArt').style.filter = `blur(${0}px)`
-        // DISABLE ANSWER BUTTONS UPON CORRECT ANSWER AND ENABLE NEXT BUTTON
-        document.getElementById("nextGame").disabled = false;
+        // DISABLE ANSWER BUTTONS UPON CORRECT ANSWER AND ENABLE (AND SHOW) NEXT BUTTON
         document.getElementById("answer1").disabled = true;
         document.getElementById("answer2").disabled = true;
         document.getElementById("answer3").disabled = true;
         document.getElementById("answer4").disabled = true;
+        document.getElementById("nextGame").disabled = false;
+        document.getElementById("nextGame").style.visibility = "visible";
+
         potentialWinnablePoints = 100;
 
     } else {
@@ -1187,6 +1189,7 @@ function guessGame(x){
         filterStrength -= 10;
         document.getElementById('boxArt').style.filter = `blur(${filterStrength}px)`
         document.getElementById("answer"+x).disabled = true;
+        document.getElementById("answer"+x).style.visibility = "hidden";
         //
         if(potentialWinnablePoints === 25){
             potentialWinnablePoints = 0;
@@ -1205,12 +1208,22 @@ function guessGame(x){
         console.log("WrongGuessesCount ",wrongGuessesCount)
         //IF GUESSES 3 ANSWERS WRONG
         if(wrongGuessesCount === 3){
+            //MAKE NEXT BUTTON VISIBLE
+            document.getElementById("nextGame").style.visibility = "visible";
+            // document.getElementById("answer1").style.visibility = "hidden";
+            // document.getElementById("answer2").style.visibility = "hidden";
+            // document.getElementById("answer3").style.visibility = "hidden";
+            // document.getElementById("answer4").style.visibility = "hidden";
+ 
+            //UNBLUR THE PICTURE
             document.getElementById('boxArt').style.filter = `blur(0px)`;
+            //DISABLE ANSWER BUTTONS AND ENABLE NEXT BUTTON
             document.getElementById("answer1").disabled = true;
             document.getElementById("answer2").disabled = true;
             document.getElementById("answer3").disabled = true;
             document.getElementById("answer4").disabled = true;
             document.getElementById("nextGame").disabled = false;
+
             wrongGuessesCount = 0;
         }
         
