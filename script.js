@@ -45,7 +45,7 @@ function generateNewGame() {
 document.getElementById("startGame").style.visibility = "hidden";
 document.getElementById("startGame").disabled = true;
     //IF 10 ROUNDS END THE GAME
-if (gameRound === 2) {
+if (gameRound === 10) {
     gameFinished()
 }
 
@@ -217,10 +217,10 @@ function addToLeaderBoards(userName){
     console.log("userName",userName)
     console.log("Date is ", date)
  
-   db.collection("players").add({
-      userName: userName,
+   db.collection("leaderboard").add({
+      Username: userName,
       Score: userScore,
-      last: date
+      DateAdded: date
   })
   .then(function(docRef) {
       console.log("Documentwritten with ID: ", docRef.id);
@@ -239,4 +239,5 @@ oneUpSound.play();
 function restartGame() {
     location.reload()
 }
+
 
