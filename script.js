@@ -1,3 +1,9 @@
+//Insert .env here
+
+
+firebase.initializeApp(firebaseConfig);
+let db = firebase.firestore();
+
 let userScore = 0;
 let gameRound = 0;
 let gameTitle = "";
@@ -20,6 +26,9 @@ let randomGameNumber = ""
 let randomGame = []
 let potentialWinnablePoints = 100;
 let wrongGuessesCount = 0;
+let userName = ""
+let date = ""
+
 
 let coinSound = new Audio("./sounds/coin.mp3"); // buffers automatically when created
 let fireSound = new Audio("./sounds/fire.mp3"); // buffers automatically when created
@@ -31,10 +40,6 @@ document.getElementById("startGame").style.visibility = "hidden";
 document.getElementById("startGame").disabled = true;
     //IF 10 ROUNDS END THE GAME
 if (gameRound === 10) {
-    alert("Game Finished! Your Final Score is " + userScore + ".")
-    if(userScore === 1000){
-        alert("FLAWLESS VICTORY!!")
-    }
     gameFinished()
 }
 
@@ -185,9 +190,48 @@ if (document.getElementById("answer" + x).innerHTML === rightAnswer) {
 }
 
 function gameFinished() {
+if(userScore === 1000){
+    alert("FLAWLESS VICTORY!!")
+}
+// alert("Game Finished! Your Final Score is " + userScore + ".")
+let answer = window.confirm("Game Finished! Your Final Score is " + userScore + "." + " Save Score to Leaderboard?")
+if (answer) {
+    userName = prompt("Enter your nickname", "Harry Potter");
+    addToLeaderBoards(userName)
+}
+else {
+    console.log("No Don't Save")
+    restartGame()
+}
+}
+
+function addToLeaderBoards(userName){
+
+    date = moment().format('MMMM Do YYYY, h:mm:ss a')
+    console.log("userName",userName)
+    console.log("Date is ", date)
+ 
+   db.collection("leaderboard").add({
+      Username: userName,
+      Score: userScore,
+      DateAdded: date
+  })
+  .then(function(docRef) {
+      console.log("Documentwritten with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+
+setTimeout(function(){ alert("Leaderboard updated! Play again?");restartGame() }, 2000);
 //Playsound Effect
 oneUpSound.play();
-alert("Play again?")
-location.reload()
+
+
 }
+
+function restartGame() {
+    location.reload()
+}
+
 
