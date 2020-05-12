@@ -1098,7 +1098,7 @@ if (gameRound === 10) {
 filterStrength = 40;
 document.getElementById('boxArt').style.filter = `blur(40px)`
 
-//SETS GAME ROUND TO 1
+//SETS GAME ROUND TO 1.  This IF prevents the round to go to 11 upon finishing the game.
 if (gameRound !== 10){
     gameRound++
 }
