@@ -2,66 +2,89 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Guess That Image</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Guess That Image</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-         <!-- Inserts Bubble Background -->
-		<script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
-        <script>bubbly({
-          colorStart: '#FFF456',
-          colorStop: '#00ffff',
-          bubbleFunc:() => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`
-        });</script>
+    <!-- Inserts Bubble Background -->
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
+    <script>
+        bubbly({
+            colorStart: '#FFF456',
+            colorStop: '#00ffff',
+            bubbleFunc: () => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`
+        });
+    </script>
 
-        
-            <div class="Title">
-                <h1>GUESS THAT GAME!</h1>
-            </div>
 
-            <div class="ScoreBoard">
-                <h2>Round <span id="Round"></span>/10</h2>
-                <h3>Your Score: <span id="Score"></span></h3>
-                <h4>Winnable Points This Round: <span id="WinnablePoints"></span></h4>
-            </div>
+    <div class="Title">
+        <h1 style="font-size:3vw">GUESS THAT GAME</h1>
+    </div>
 
-            <div class="PhotoContainer" id="gamePicture">
-                <img id="boxArt" src="./Img/Background.jpg" style="filter: blur(0px)">
-            </div>
-            
-            <div class="ButtonsContainer">
-                <button class="AnswerButton1" id="answer1" type="button" onclick="guessGame(1)" style="visibility: hidden;">Click Me!</button>
-                <button class="AnswerButton2" id="answer2" type="button" onclick="guessGame(2)" style="visibility: hidden;">Click Me!</button>
-                <button class="AnswerButton3" id="answer3" type="button" onclick="guessGame(3)" style="visibility: hidden;">Click Me!</button>
-                <button class="AnswerButton4" id="answer4" type="button" onclick="guessGame(4)" style="visibility: hidden;">Click Me!</button>
-            </div>
-            <div class="NextButton">
-                <button id="nextGame" type="button" onclick="generateNewGame()">Next Image</button>
-            </div>
-            
-            <!-- <div class="Footer">
+    <div class="RoundScoreImageParentContainer">
+        <div class="roundContainerDiv">
+            <h3 style="font-size:2vw">Round <span id="Round" style="color:blue"></span>/10</h3>
+        </div>
+        <div class="winnablePointsContainer">
+            <h4 style="font-size:1.7vw">Max Points This Round: <span id="WinnablePoints" style="color:blue"></span></h4>
+        </div>
+        <div class="ScoreBoard">
+            <h3 style="font-size:2vw">Score:<span id="Score" style="color:blue"></span></h3>
+        </div>
+    </div>
+
+
+    <!-- <div class="imageContainer"> -->
+        <img id="boxArt" src="./img/Background.jpg" style="filter: blur(0px)" alt="Game">
+    <!-- </div> -->
+
+
+    <div class="ButtonsContainer">
+        <button class="AnswerButton1" id="answer1" type="button" onclick="guessGame(1)" style="visibility: hidden;">Click Me!</button>
+        <button class="AnswerButton2" id="answer2" type="button" onclick="guessGame(2)" style="visibility: hidden;">Click Me!</button>
+        <button class="AnswerButton3" id="answer3" type="button" onclick="guessGame(3)" style="visibility: hidden;">Click Me!</button>
+        <button class="AnswerButton4" id="answer4" type="button" onclick="guessGame(4)" style="visibility: hidden;">Click Me!</button>
+    </div>
+
+    <div class="NextButton">
+        <button id="nextGame" type="button" onclick="generateNewGame()" style="visibility: hidden;">Next Image</button>
+    </div>
+
+    <div class="StartButtonContainer">
+        <button id="startGame" type="button" onclick="generateNewGame()">Start!</button>
+    </div>
+    
+
+
+    <!-- <div class="Footer">
                 <p>Made With 🥚🍳 By Carlos</p>
             </div> -->
 
-            <p class="creator">
-                <div class="footer">
-                    Made with <i class="fa fa-heart"></i> by <a href="https://github.com/CarlosIUSalazar"
-                        target="_blank">Carlos</a>
-                </div>
-            </p>
+    <p class="creator">
+    <div class="footer">
+        <span> Made with 🥔 by <a class="creator" href="https://github.com/CarlosIUSalazar" target="_blank">Carlos</a></span>
+    </div>
+    </p>
 
-            <!-- document.getElementById('bigpic').style.display='block'; -->
+    <!-- document.getElementById('bigpic').style.display='block'; -->
 
-        <script src="./Data/data.js" async defer></script>
-        <script src="./script.js" async defer></script>
-    </body>
+    <script src="./Data/data.js" async defer></script>
+    <script src="./script.js" async defer></script>
+</body>
+
 </html>
