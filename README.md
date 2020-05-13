@@ -19,7 +19,6 @@ You need: A Firebase Database account and API, replace your credentials inside t
 - Fork and clone this repo to your computer
 - Run live server
 
-
 ## Built With
 
 - HTML/CSS/JS plus moment.js.  Backend is hosted on AWS S3, Route 53 & Cloudfront at www.gamerguess.com
@@ -28,13 +27,11 @@ You need: A Firebase Database account and API, replace your credentials inside t
 
 - Please open a pull request if you would like to contribute to this project.
 
-
 ## Authors
 
 #### (Name - Role - GitHub username)
 
 - Carlos Salazar - App creator - CarlosIUSalazar
-
 
 ## License
 
