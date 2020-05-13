@@ -40,6 +40,8 @@ let fireSound = new Audio("./sounds/fire.mp3"); // buffers automatically when cr
 let oneUpSound = new Audio("./sounds/1up.mp3"); // buffers automatically when created
 
 function generateNewGame() {
+    //Fixes a glitch with reseting points for next round
+    potentialWinnablePoints = 100;
     //Disappear and disable Start Game button!
     document.getElementById("startGame").style.visibility = "hidden";
     document.getElementById("startGame").disabled = true;
@@ -201,7 +203,10 @@ function gameFinished() {
     // alert("Game Finished! Your Final Score is " + userScore + ".")
     let answer = window.confirm("Game Finished! Your Final Score is " + userScore + "." + " Save Score to Leaderboard?")
     if (answer) {
-        userName = prompt("Enter your nickname", "Harry Potter");
+        userName = prompt("Enter your nickname", "");
+        if(userName === ""){
+            userName = "Anon"
+        }
         addToLeaderBoards(userName)
     } else {
         console.log("No Don't Save")
