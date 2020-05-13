@@ -308,18 +308,21 @@ h4 {
     top: 1px;
 }
 
+/* ******************** */
+/* ////// FOOTER ///// */
+/* ****************** */
 .creator {
     display: row;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color: blue;
+    color: cyan;
     font-size: 1em;
     padding-top: 0px;
 }
 
 .creator a {
-    color: blue;
+    color: cyan;
     text-decoration: underline;
 }
 
@@ -338,7 +341,7 @@ h4 {
 }
 
 .leaderboardLink{
-    color:blue;
+    color:cyan;
 }
 
 /* *********************** */

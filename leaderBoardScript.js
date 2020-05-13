@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 dbLeaderboards = firebase.firestore();
 
 let tabla = document.getElementById('tabla');
-dbLeaderboards.collection("leaderboard").onSnapshot((querySnapshot) => {
+dbLeaderboards.collection("leaderboard").orderBy('Score','desc').onSnapshot((querySnapshot) => {
     tabla.innerHTML = '';
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
