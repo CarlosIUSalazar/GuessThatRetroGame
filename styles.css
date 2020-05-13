@@ -42,8 +42,8 @@ body {
 }
 
 .imageContainer {
-	width: 600px;
-	margin: 0,auto;
+    width: 600px;
+    margin: 0, auto;
 }
 
 /* @media only screen 
@@ -68,7 +68,7 @@ and (-webkit-device-pixel-ratio : 3)  {
 	}
   } */
 
-  /* @media only screen 
+/* @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3)  {
@@ -80,10 +80,10 @@ and (-webkit-device-pixel-ratio : 3)  {
 	}
   } */
 
-#boxArt{
-	max-width: 75%;
-	max-height: 75%;
-	padding-left: 12%;
+#boxArt {
+    max-width: 75%;
+    max-height: 75%;
+    padding-left: 12%;
 }
 
 .ScoreBoard {
@@ -91,7 +91,7 @@ and (-webkit-device-pixel-ratio : 3)  {
 }
 
 .winnablePointsContainer {
-	padding-right: 30px;
+    padding-right: 30px;
 }
 
 h1 {
@@ -99,7 +99,7 @@ h1 {
     font-family: Arcade_I;
     font-weight: 100;
     text-align: center;
-	color: blue;
+    color: blue;
 }
 
 h2 {
@@ -137,8 +137,8 @@ h4 {
     display: flex;
 }
 
-.StartButtonContainer{
-	display:flex;
+.StartButtonContainer {
+    display: flex;
 }
 
 #startGame {
@@ -168,6 +168,7 @@ h4 {
     position: relative;
     top: 1px;
 }
+
 #nextGame {
     margin: auto;
     box-shadow: inset 0px 1px 0px 0px #fbafe3;
@@ -340,23 +341,23 @@ h4 {
     text-align: center;
 }
 
-.leaderboardLink{
-    color:cyan;
+.leaderboardLink {
+    color: cyan;
 }
 
 /* *********************** */
 /* LEADERBOARDS */
 /* *********************** */
 
-.leaderBoardTitle{
+.leaderBoardTitle {
     font-size: xx-large;
     font-family: Arcade_I;
     font-weight: 100;
     text-align: center;
-	color:blue;
+    color: blue;
 }
 
-.tableHead1{
+.tableHead1 {
     font-family: Arcade_N;
     font-weight: 100;
     text-align: center;
@@ -366,18 +367,18 @@ h4 {
     background-color: rgb(255, 0, 221)
 }
 
-.tableHead2{
+.tableHead2 {
     font-family: Arcade_N;
     font-weight: 100;
     text-align: center;
-    width:100px;
+    width: 100px;
     border: 1px solid rgb(136, 36, 111);
     padding: 8px;
     color: rgb(255, 251, 4);
     background-color: rgb(255, 0, 221)
 }
 
-.tableHead3{
+.tableHead3 {
     font-family: Arcade_N;
     font-weight: 100;
     text-align: center;
@@ -397,21 +398,26 @@ h4 {
     border-collapse: collapse;
     width: 100%;
     font-size: large;
-  }
-  
-  #tabla td, #tabla th {
+}
+
+#tabla td,
+#tabla th {
     border: 1px solid rgb(136, 36, 111);
     padding: 8px;
-  }
-  
-  #tabla tr:nth-child(even){background-color: #eaff0070;}
-  
-  #tabla tr:hover {background-color: rgb(221, 221, 221);}
-  
-  #tabla th {
+}
+
+#tabla tr:nth-child(even) {
+    background-color: #eaff0070;
+}
+
+#tabla tr:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+#tabla th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #4CAF50;
     color: white;
-  }
+}

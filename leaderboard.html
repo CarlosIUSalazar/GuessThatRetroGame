@@ -2,24 +2,28 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GamerGuess! Leaderboard</title>
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-         <!-- Firestore -->
-     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
-    </head>
-    <body>
- <!-- Inserts Bubble Background -->
- <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
-      <script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GamerGuess! Leaderboard</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <!-- Inserts Bubble Background -->
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
+    <script>
         bubbly({
             //ORIGINAL
             colorStart: '#10FFFF',
@@ -29,36 +33,37 @@
 
         // colorStart: '#FFF456',
         // colorStop: '#FF00FF',
-     </script>
-        <!--[if lt IE 7]>
+    </script>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <p class="leaderBoardTitle">GAMER GUESS! LEADERBOARD</p>
-        <p><a class="backHomeLink" href="./index.html">Back to Game</a></p>
-        <table class="table my-3">
-            <thead>
-              <tr class="tableRow">
+    <p class="leaderBoardTitle">GAMER GUESS! LEADERBOARD</p>
+    <p><a class="backHomeLink" href="./index.html">Back to Game</a></p>
+    <table class="table my-3">
+        <thead>
+            <tr class="tableRow">
                 <!-- <th scope="col">Id</th> -->
                 <th class="tableHead1" scope="col">User Name</th>
                 <th class="tableHead2" scope="col">Score</th>
                 <th class="tableHead3" scope="col">Date</th>
-              </tr>
-            </thead>
-            <tbody id="tabla">
-            </tbody>
-          </table>
+            </tr>
+        </thead>
+        <tbody id="tabla">
+        </tbody>
+    </table>
 
 
-          <p class="creator">
-            <div class="footer">
-                <span> <a class="leaderboardLink" href="./index.html">Home</a>   |   Made with 🥔 by <a class="creator" href="https://github.com/CarlosIUSalazar" target="_blank">Carlos</a></span>
-            </div>
-            </p>
+    <p class="creator">
+    <div class="footer">
+        <span> <a class="leaderboardLink" href="./index.html">Home</a> | Made with 🥔 by <a class="creator" href="https://github.com/CarlosIUSalazar" target="_blank">Carlos</a></span>
+    </div>
+    </p>
 
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-          <script src="./leaderBoardScript.js"></script>
-          <script src="./script.js" async defer></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="./leaderBoardScript.js"></script>
+    <script src="./script.js" async defer></script>
+</body>
+
 </html>

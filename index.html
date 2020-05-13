@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GamerGuess The Boxart!</title>
@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="./styles.css">
     <script src="./libraries/moment.js"></script>
 
-    
-     <!-- Firestore -->
-     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
             <h3 style="font-size:2vw">Round <span id="Round" style="color:blue"></span>/10</h3>
         </div>
         <div class="winnablePointsContainer">
-            <h4 style="font-size:1.7vw">Max Points This Round: <span id="WinnablePoints" style="color:blue"></span></h4>
+            <h4 style="font-size:1.7vw">Round Max Points: <span id="WinnablePoints" style="color:blue"></span></h4>
         </div>
         <div class="ScoreBoard">
             <h3 style="font-size:2vw">Score:<span id="Score" style="color:blue"></span></h3>
@@ -59,7 +59,7 @@
 
 
     <!-- <div class="imageContainer"> -->
-        <img id="boxArt" src="./img/Background2.jpg" style="filter: blur(0px)" alt="Game">
+    <img id="boxArt" src="./img/Background2.jpg" style="filter: blur(0px)" alt="Game">
     <!-- </div> -->
 
 
@@ -77,25 +77,12 @@
     <div class="StartButtonContainer">
         <button id="startGame" type="button" onclick="generateNewGame()">Start!</button>
     </div>
-    <!-- <div class="Footer">
-                <p>Made With 🥚🍳 By Carlos</p>
-            </div> -->
-
     <p class="creator">
     <div class="footer">
-        <span> <a class="leaderboardLink" href="./leaderboard.html">Leaderboard</a>   |   Made with 🥔 by <a class="creator" href="https://github.com/CarlosIUSalazar" target="_blank">Carlos</a></span>
+        <span> <a class="leaderboardLink" href="./leaderboard.html">Leaderboard</a> | Made with 🥔 by <a class="creator" href="https://github.com/CarlosIUSalazar" target="_blank">Carlos</a></span>
     </div>
     </p>
 
-    <!-- document.getElementById('bigpic').style.display='block'; -->
-
-
-
-<!-- Trigger/Open The Modal -->
-
-
-
-    
     <script src="./script.js" async defer></script>
     <script src="./leaderBoardScript.js" async defer></script>
 </body>
