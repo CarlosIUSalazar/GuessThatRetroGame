@@ -4,7 +4,7 @@ This was created during our time as students at Code Chrysalis.
 
 This is a fullstack app that will test your knowledge (and memory) of retro games boxart.
 
-![FlyingBee Truck Stops Logo](/img/FlyingBeeTruckStopsSmaller.png)
+![GamerGuess.com](/img/GamerguessImg.jpg)
 
 ## Getting Started
 
